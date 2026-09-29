@@ -1,0 +1,198 @@
+/* =====================================================
+   MediCore HMS - Pages CSS
+   Page-specific styles
+   ===================================================== */
+
+/* Dashboard */
+.dashboard-welcome {
+  background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+  border-radius: var(--radius-lg); padding: var(--space-xl);
+  color: white; margin-bottom: var(--space-lg);
+  position: relative; overflow: hidden;
+}
+.dashboard-welcome h2 { font-size: 1.375rem; margin-bottom: 4px; }
+.dashboard-welcome p { opacity: 0.85; font-size: 0.9375rem; }
+.dashboard-welcome-bg {
+  position: absolute; right: -30px; bottom: -30px;
+  opacity: 0.1; pointer-events: none;
+}
+.dashboard-date {
+  font-size: 0.8125rem; opacity: 0.8; margin-top: var(--space-sm);
+  display: flex; align-items: center; gap: 6px;
+}
+
+/* Appointments list in dashboard */
+.appt-list { display: flex; flex-direction: column; }
+.appt-item {
+  display: flex; align-items: center; gap: 12px;
+  padding: 12px 16px; border-bottom: 1px solid var(--border);
+  transition: background 0.1s ease;
+}
+.appt-item:last-child { border-bottom: none; }
+.appt-item:hover { background: var(--gray-50); }
+.appt-time {
+  font-size: 0.8125rem; color: var(--text-secondary);
+  font-weight: 600; min-width: 50px;
+}
+.appt-info { flex: 1; min-width: 0; }
+.appt-patient { font-weight: 600; font-size: 0.875rem; color: var(--text-primary); }
+.appt-doctor { font-size: 0.8125rem; color: var(--text-secondary); }
+.appt-status { flex-shrink: 0; }
+
+/* Patient specific */
+.patient-id-badge {
+  display: inline-flex; align-items: center; gap: 4px;
+  background: var(--primary-50); color: var(--primary-dark);
+  border: 1px solid var(--primary-light);
+  padding: 2px 8px; border-radius: var(--radius-full);
+  font-size: 0.75rem; font-weight: 600;
+}
+.blood-group-badge {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 32px; height: 32px; border-radius: 50%;
+  background: var(--danger-light); color: var(--danger);
+  font-size: 0.75rem; font-weight: 700;
+  border: 1px solid #fca5a5;
+}
+
+/* Doctor schedule */
+.schedule-grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 4px; }
+.schedule-day {
+  text-align: center; padding: 6px 4px;
+  border-radius: var(--radius-sm);
+  font-size: 0.75rem;
+}
+.schedule-day-name { font-weight: 600; color: var(--text-secondary); margin-bottom: 4px; }
+.schedule-day.available { background: var(--success-light); }
+.schedule-day.unavailable { background: var(--gray-100); color: var(--text-muted); }
+.schedule-time { font-size: 0.6875rem; color: var(--text-secondary); }
+
+/* Billing */
+.bill-header {
+  background: linear-gradient(135deg, #1e293b, #0f172a);
+  color: white; padding: var(--space-xl);
+  border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+}
+.bill-number { font-size: 1.25rem; font-weight: 700; margin-bottom: 4px; }
+.bill-meta { font-size: 0.8125rem; opacity: 0.7; }
+.bill-summary {
+  background: var(--gray-50); padding: var(--space-md);
+  border-radius: var(--radius-md); margin-top: var(--space-md);
+}
+.bill-summary-row {
+  display: flex; justify-content: space-between;
+  padding: 6px 0; font-size: 0.875rem;
+}
+.bill-summary-row.total {
+  font-weight: 700; font-size: 1.0625rem;
+  border-top: 2px solid var(--border); margin-top: 6px; padding-top: 10px;
+  color: var(--primary);
+}
+.bill-summary-row.discount { color: var(--success); }
+
+/* Medical records timeline */
+.record-timeline { position: relative; padding-left: 24px; }
+.record-timeline::before {
+  content: ''; position: absolute; left: 7px; top: 0; bottom: 0;
+  width: 2px; background: var(--border);
+}
+.record-item { position: relative; margin-bottom: var(--space-lg); }
+.record-item::before {
+  content: ''; position: absolute; left: -20px; top: 6px;
+  width: 12px; height: 12px; border-radius: 50%;
+  background: var(--primary); border: 2px solid var(--primary-light);
+  z-index: 1;
+}
+.record-date {
+  font-size: 0.75rem; font-weight: 600;
+  color: var(--text-muted); text-transform: uppercase;
+  letter-spacing: 0.05em; margin-bottom: 6px;
+}
+.record-card {
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: var(--radius-md); padding: var(--space-md);
+  box-shadow: var(--shadow-sm);
+}
+.record-card h4 { font-size: 0.9375rem; margin-bottom: var(--space-sm); color: var(--text-primary); }
+.record-field { margin-bottom: 8px; }
+.record-field label { font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.04em; color: var(--text-muted); display: block; }
+.record-field p { font-size: 0.875rem; color: var(--text-primary); margin-top: 2px; }
+
+/* Prescription view */
+.rx-header {
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  color: white; padding: var(--space-lg); border-radius: var(--radius-md) var(--radius-md) 0 0;
+}
+.rx-symbol { font-size: 2.5rem; font-style: italic; font-weight: 700; opacity: 0.3; line-height: 1; }
+.rx-body { padding: var(--space-lg); border: 1px solid var(--border); border-top: none; border-radius: 0 0 var(--radius-md) var(--radius-md); }
+.rx-medicine-card {
+  background: var(--gray-50); border: 1px solid var(--border);
+  border-radius: var(--radius-sm); padding: 12px;
+  margin-bottom: var(--space-sm);
+}
+.rx-medicine-name { font-weight: 600; font-size: 0.9375rem; color: var(--text-primary); margin-bottom: 4px; }
+.rx-medicine-details { display: flex; gap: var(--space-md); flex-wrap: wrap; }
+.rx-medicine-detail { font-size: 0.8125rem; color: var(--text-secondary); display: flex; align-items: center; gap: 4px; }
+.rx-medicine-detail strong { color: var(--text-primary); }
+
+/* Department grid */
+.dept-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: var(--space-md); }
+.dept-card {
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: var(--radius-lg); padding: var(--space-lg);
+  text-align: center; transition: var(--transition-slow); cursor: pointer;
+}
+.dept-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-md); border-color: var(--primary); }
+.dept-icon {
+  width: 56px; height: 56px; border-radius: var(--radius-md);
+  display: flex; align-items: center; justify-content: center;
+  margin: 0 auto var(--space-md); font-size: 1.5rem;
+}
+.dept-name { font-weight: 600; font-size: 0.9375rem; margin-bottom: 4px; }
+.dept-count { font-size: 0.8125rem; color: var(--text-secondary); }
+
+/* User management */
+.user-row-role { display: flex; align-items: center; gap: var(--space-sm); }
+
+/* Dashboard donut chart */
+.donut-wrapper {
+  display: flex; align-items: center; gap: var(--space-xl);
+}
+.donut-chart {
+  position: relative; width: 120px; height: 120px; flex-shrink: 0;
+}
+.donut-chart svg { transform: rotate(-90deg); }
+.donut-center {
+  position: absolute; inset: 0;
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+}
+.donut-center-value { font-size: 1.5rem; font-weight: 700; font-family: var(--font-display); line-height: 1; }
+.donut-center-label { font-size: 0.6875rem; color: var(--text-muted); }
+.donut-legend { flex: 1; }
+.donut-legend-item {
+  display: flex; align-items: center; gap: 8px;
+  font-size: 0.8125rem; margin-bottom: 8px;
+}
+.donut-legend-dot { width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; }
+.donut-legend-label { flex: 1; color: var(--text-secondary); }
+.donut-legend-value { font-weight: 600; color: var(--text-primary); }
+
+/* View/print bill page */
+.bill-print-card {
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: var(--radius-lg); overflow: hidden;
+  max-width: 700px; margin: 0 auto;
+  box-shadow: var(--shadow-md);
+}
+.bill-print-logo {
+  display: flex; align-items: center; gap: var(--space-md);
+}
+.bill-print-logo h2 { font-size: 1.25rem; color: white; }
+.bill-print-logo p { font-size: 0.75rem; opacity: 0.7; }
+.bill-status-banner {
+  text-align: center; padding: 6px;
+  font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em;
+}
+.bill-status-paid { background: var(--success-light); color: #166534; }
+.bill-status-unpaid { background: var(--danger-light); color: #991b1b; }
